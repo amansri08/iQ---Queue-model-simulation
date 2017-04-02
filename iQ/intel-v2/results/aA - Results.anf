@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/intel-v2/results/astar-0.sca"/>
+    <inputs name="/intel-v2/results/astar-0.vci"/>
+    <inputs name="/intel-v2/results/astar-0.vec"/>
+    <inputs name="/intel-v2/results/bzip2-0.sca"/>
+    <inputs name="/intel-v2/results/bzip2-0.vci"/>
+    <inputs name="/intel-v2/results/bzip2-0.vec"/>
+    <inputs name="/intel-v2/results/gobmk-0.sca"/>
+    <inputs name="/intel-v2/results/gobmk-0.vci"/>
+    <inputs name="/intel-v2/results/gobmk-0.vec"/>
+    <inputs name="/intel-v2/results/h264-0.sca"/>
+    <inputs name="/intel-v2/results/h264-0.vci"/>
+    <inputs name="/intel-v2/results/h264-0.vec"/>
+    <inputs name="/intel-v2/results/hmmer-0.sca"/>
+    <inputs name="/intel-v2/results/hmmer-0.vci"/>
+    <inputs name="/intel-v2/results/hmmer-0.vec"/>
+    <inputs name="/intel-v2/results/libquantum-0.sca"/>
+    <inputs name="/intel-v2/results/libquantum-0.vci"/>
+    <inputs name="/intel-v2/results/libquantum-0.vec"/>
+    <inputs name="/intel-v2/results/mcf-0.sca"/>
+    <inputs name="/intel-v2/results/mcf-0.vci"/>
+    <inputs name="/intel-v2/results/mcf-0.vec"/>
+    <inputs name="/intel-v2/results/perlbench-0.sca"/>
+    <inputs name="/intel-v2/results/perlbench-0.vci"/>
+    <inputs name="/intel-v2/results/perlbench-0.vec"/>
+    <inputs name="/intel-v2/results/sjeng-0.sca"/>
+    <inputs name="/intel-v2/results/sjeng-0.vci"/>
+    <inputs name="/intel-v2/results/sjeng-0.vec"/>
+    <inputs name="/intel-v2/results/xalancbmk-0.sca"/>
+    <inputs name="/intel-v2/results/xalancbmk-0.vci"/>
+    <inputs name="/intel-v2/results/xalancbmk-0.vec"/>
+  </inputs>
+  <datasets>
+    <datasets name="ipc">
+      <items xsi:type="scave:Add" filterPattern="name(Sim_ipc)"/>
+      <items xsi:type="scave:Add" filterPattern="name(Real_ipc)"/>
+      <items xsi:type="scave:BarChart" name="IPC comparison">
+        <properties name="Graph.Title.Font" value="Arial-regular-14"/>
+        <properties name="X.Axis.Title" value="SPEC CPU2006 INT"/>
+        <properties name="Y.Axis.Title" value="IPC"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-20"/>
+        <properties name="Label.Font" value="Arial-regular-18"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Legend.Border" value="true"/>
+        <properties name="Legend.Font" value="Arial-regular-20"/>
+        <properties name="Bar.Placement" value="Overlap"/>
+        <properties name="X.Label.Wrap" value="false"/>
+      </items>
+    </datasets>
+    <datasets name="error">
+      <items xsi:type="scave:Add" filterPattern="name(Error_ipc)"/>
+      <items xsi:type="scave:BarChart" name="IPC error">
+        <properties name="X.Axis.Title" value="SPEC CPU2006 INT"/>
+        <properties name="Y.Axis.Title" value="Error (%)"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-20"/>
+        <properties name="Label.Font" value="Arial-regular-18"/>
+        <properties name="Legend.Font" value="Arial-regular-12"/>
+        <properties name="Legend.Position" value="Inside"/>
+        <properties name="Legend.Anchoring" value="NorthEast"/>
+        <properties name="X.Label.Wrap" value="false"/>
+      </items>
+    </datasets>
+    <datasets name="ipc vs time">
+      <items xsi:type="scave:Add" filterPattern="name(Sim_ipc_vector)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="IPC vs Time" lineNameFormat="">
+        <properties name="Plot.Antialias" value="false"/>
+        <properties name="Plot.Caching" value="false"/>
+        <properties name="X.Axis.Title" value="Simulated cycles"/>
+        <properties name="Y.Axis.Title" value="IPC"/>
+        <properties name="Axis.Title.Font" value="-regular-20"/>
+        <properties name="Label.Font" value="-regular-18"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Legend.Border" value="true"/>
+        <properties name="Legend.Font" value="Arial-regular-18"/>
+        <properties name="X.Axis.Max" value="10000.0"/>
+        <properties name="Line.Name//intel-v2/results/astar-0.vec astar-0-20150826-12:03:17-6648 astar" value="astar"/>
+        <properties name="Line.Name//intel-v2/results/bzip2-0.vec bzip2-0-20150826-11:56:05-7632 bzip2" value="bzip2"/>
+        <properties name="Line.Name//intel-v2/results/gcc-0.vec gcc-0-20150826-11:56:30-8048 gcc" value="gcc"/>
+        <properties name="Line.Name//intel-v2/results/gobmk-0.vec gobmk-0-20150826-11:58:01-248 gobmk" value="gobmk"/>
+        <properties name="Line.Name//intel-v2/results/h264-0.vec h264-0-20150826-12:01:28-6692 h264" value="h264"/>
+        <properties name="Line.Name//intel-v2/results/hmmer-0.vec hmmer-0-20150826-11:58:22-7724 hmmer" value="hmmer"/>
+        <properties name="Line.Name//intel-v2/results/libquantum-0.vec libquantum-0-20150826-12:00:36-1788 libquantum" value="libquantum"/>
+        <properties name="Line.Name//intel-v2/results/mcf-0.vec mcf-0-20150826-11:57:42-1588 mcf" value="mcf"/>
+        <properties name="Line.Name//intel-v2/results/perlbench-0.vec perlbench-0-20150826-11:55:10-5764 perlbench" value="perlbench"/>
+        <properties name="Line.Name//intel-v2/results/sjeng-0.vec sjeng-0-20150826-12:00:03-4852 sjeng" value="sjeng"/>
+        <properties name="Line.Name//intel-v2/results/xalancbmk-0.vec xalancbmk-0-20150826-12:03:52-1492 xalancbmk" value="xalancbmk"/>
+      </items>
+    </datasets>
+    <datasets name="Histogram gobmk">
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/gobmk-0.sca) AND attr:configname(gobmk) AND attr:runnumber(0) AND module(FifoNet.control) AND name(&quot;Dep queue length&quot;)" type="HISTOGRAM"/>
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/gobmk-0.sca) AND attr:configname(gobmk) AND attr:runnumber(0) AND module(FifoNet.control) AND name(&quot;Onfly queue length&quot;)" type="HISTOGRAM"/>
+      <items xsi:type="scave:HistogramChart" name="gobmk histogram">
+        <properties name="X.Axis.Title" value="Queue length"/>
+        <properties name="Y.Axis.Title" value="Probability Density Function"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-20"/>
+        <properties name="Label.Font" value="Arial-regular-18"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Legend.Border" value="true"/>
+        <properties name="Legend.Font" value="Arial-regular-20"/>
+        <properties name="Hist.Bar" value="Outline"/>
+        <properties name="Hist.Data" value="Pdf"/>
+      </items>
+    </datasets>
+    <datasets name="vector evolution">
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/gobmk-0.vec) AND attr:configname(gobmk) AND attr:runnumber(0) AND module(FifoNet.control) AND name(Queue_length_vector)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="" lineNameFormat="">
+        <properties name="X.Axis.Title" value="Simulation cycle"/>
+        <properties name="Y.Axis.Title" value="Queue length"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-14"/>
+        <properties name="Label.Font" value="Arial-regular-12"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Legend.Border" value="true"/>
+        <properties name="Legend.Position" value="Below"/>
+        <properties name="X.Axis.Min" value="100.0"/>
+        <properties name="X.Axis.Max" value="130.0"/>
+        <properties name="Line.Type" value="Linear"/>
+        <properties name="Line.Name/FifoNet.control Queue_length_vector" value="Fetch instructions"/>
+      </items>
+    </datasets>
+    <datasets name="a">
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/hmmer-0.vec) AND attr:configname(hmmer) AND attr:runnumber(0) AND module(FifoNet.sink) AND name(Sim_ipc_vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/mcf-0.vec) AND attr:configname(mcf) AND attr:runnumber(0) AND module(FifoNet.sink) AND name(Sim_ipc_vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/bzip2-0.vec) AND attr:configname(bzip2) AND attr:runnumber(0) AND module(FifoNet.sink) AND name(Sim_ipc_vector)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="IPC vs Time (3_benchmarks)" lineNameFormat="">
+        <properties name="Graph.Title.Font" value="Arial-regular-8"/>
+        <properties name="X.Axis.Title" value="Simulated cycles"/>
+        <properties name="Y.Axis.Title" value="IPC"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-20"/>
+        <properties name="Label.Font" value="Arial-regular-18"/>
+        <properties name="Y.Axis.Min" value="0.0"/>
+        <properties name="Y.Axis.Max" value="3.0"/>
+        <properties name="Axes.Grid" value="None"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Legend.Border" value="true"/>
+        <properties name="Legend.Font" value="Arial-regular-24"/>
+        <properties name="X.Axis.Max" value="10000.0"/>
+        <properties name="Line.Name//intel-v2/results/astar-0.vec astar-0-20150826-12:03:17-6648 astar" value="astar"/>
+        <properties name="Line.Name//intel-v2/results/hmmer-0.vec hmmer-0-20150826-11:58:22-7724 hmmer" value="hmmer"/>
+        <properties name="Line.Name//intel-v2/results/mcf-0.vec mcf-0-20150826-11:57:42-1588 mcf" value="mcf"/>
+        <properties name="Line.Name//intel-v2/results/astar-0.vec astar-0-20151130-23:14:03-9016 astar" value="astar"/>
+        <properties name="Line.Name//intel-v2/results/hmmer-0.vec hmmer-0-20151130-23:15:25-4308 hmmer" value="hmmer"/>
+        <properties name="Line.Name//intel-v2/results/mcf-0.vec mcf-0-20151130-23:16:28-8668 mcf" value="mcf"/>
+        <properties name="Line.Name//intel-v2/results/bzip2-0.vec bzip2-0-20160518-15:39:34-9916 bzip2" value="bzip2"/>
+        <properties name="Line.Name//intel-v2/results/hmmer-0.vec hmmer-0-20160518-15:39:48-8372 hmmer" value="hmmer"/>
+        <properties name="Line.Color//intel-v2/results/mcf-0.vec mcf-0-20160518-15:40:00-9440 mcf" value="black"/>
+        <properties name="Line.Name//intel-v2/results/mcf-0.vec mcf-0-20160518-15:40:00-9440 mcf" value="mcf"/>
+        <properties name="Line.Color//intel-v2/results/hmmer-0.vec hmmer-0-20160518-15:39:48-8372 hmmer" value="#808080"/>
+        <properties name="Line.Color//intel-v2/results/bzip2-0.vec bzip2-0-20160518-15:39:34-9916 bzip2" value="grey"/>
+      </items>
+    </datasets>
+    <datasets name="c">
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/bzip2-0.vec) AND attr:configname(bzip2) AND attr:runnumber(0) AND module(FifoNet.control) AND name(Dep_length_vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/bzip2-0.vec) AND attr:configname(bzip2) AND attr:runnumber(0) AND module(FifoNet.control) AND name(Onfly_length_vector)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="bzip2 dep-onfly-vector" lineNameFormat="">
+        <properties name="X.Axis.Title" value="Simulation cycle"/>
+        <properties name="Y.Axis.Title" value="Queue length"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-20"/>
+        <properties name="Label.Font" value="Arial-regular-14"/>
+        <properties name="Y.Axis.Min" value="0.0"/>
+        <properties name="Y.Axis.Max" value="80.0"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Legend.Border" value="true"/>
+        <properties name="Legend.Font" value="Arial-regular-20"/>
+        <properties name="X.Axis.Min" value="10000.0"/>
+        <properties name="X.Axis.Max" value="11000.0"/>
+        <properties name="Line.Name/Dep_length_vector" value="Inst blocked for dependency"/>
+        <properties name="Line.Name/Onfly_length_vector" value="Ints under execution"/>
+      </items>
+    </datasets>
+    <datasets name="d">
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/bzip2-0.sca) AND attr:configname(bzip2) AND attr:runnumber(0) AND module(FifoNet.control) AND name(&quot;Dep queue length&quot;)" type="HISTOGRAM"/>
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/bzip2-0.sca) AND attr:configname(bzip2) AND attr:runnumber(0) AND module(FifoNet.control) AND name(&quot;Onfly queue length&quot;)" type="HISTOGRAM"/>
+      <items xsi:type="scave:HistogramChart" name="bzip2 histogram">
+        <properties name="Hist.Bar" value="Outline"/>
+        <properties name="Hist.Data" value="Pdf"/>
+      </items>
+    </datasets>
+    <datasets name="e">
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/gobmk-0.vec) AND attr:configname(gobmk) AND attr:runnumber(0) AND module(FifoNet.control) AND name(Onfly_length_vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="file(/intel-v2/results/gobmk-0.vec) AND attr:configname(gobmk) AND attr:runnumber(0) AND module(FifoNet.control) AND name(Dep_length_vector)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="gobmk vector" lineNameFormat="">
+        <properties name="Y.Axis.Max" value="80.0"/>
+        <properties name="X.Axis.Min" value="10000.0"/>
+        <properties name="X.Axis.Max" value="15000.0"/>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.2 //@datasets/@datasets.1/@items.1 //@datasets/@datasets.2/@items.1 //@datasets/@datasets.3/@items.2 //@datasets/@datasets.4/@items.1 //@datasets/@datasets.5/@items.3 //@datasets/@datasets.6/@items.2 //@datasets/@datasets.7/@items.2 //@datasets/@datasets.8/@items.2"/>
+  </chartSheets>
+</scave:Analysis>
